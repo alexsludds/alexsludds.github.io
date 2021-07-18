@@ -1,0 +1,26 @@
+name: Alex Sludds | Integrated Photonics
+url: http://alexsludds.github.io
+destination: ./_site
+twitter: spinar_d
+lsi: false
+port: 4000
+markdown: kramdown
+future: true
+kramdown:
+  parse_block_html: true
+  syntax_highlighter: rouge
+permalink: pretty
+#paginate: 5
+gems:
+  - jekyll-sitemap
+
+exclude:
+  - .travis.yml
+  - validate.rb
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - bower_components
+  - update-vendor-deps.sh
+  - vendor/bundle
+  - vendor/bower.json
