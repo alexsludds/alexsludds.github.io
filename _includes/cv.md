@@ -262,37 +262,37 @@ Expression of motility genes is a potentially beneficial but costly process in b
   
 <tr>
   <td class='col-md-1'>IAP 2018, 2017, 2016</td>
-  <td><strong>Introduction to Signals and Systems <strong> (6.058 @ MIT)<br>
-   Instructor for month long intensive signals and systems course. Created lectures and coursework.</td>
+  <td><strong>Introduction to Signals and Systems </strong> (6.058 @ MIT)<br>
+   Instructor for month long intensive signals and systems course. Created lectures and coursework. </td>
 </tr>
   
 <tr>
   <td class='col-md-1'>Fall 2017</td>
-  <td><strong>Machine Learning <strong> (6.036 @ MIT)<br>
+  <td><strong>Machine Learning </strong> (6.036 @ MIT)<br>
    Lab Assistant: Helped assisting laboratory instruction. </td>
 </tr>
   
 <tr>
   <td class='col-md-1'>Fall 2017</td>
-  <td><strong>Circuits and Electronics <strong> (6.002 MIT)<br>
+  <td><strong>Circuits and Electronics </strong> (6.002 MIT)<br>
    Lab Assistant: Helped assisting laboratory instruction. </td>
 </tr>
     
 <tr>
   <td class='col-md-1'>Fall 2017</td>
-  <td><strong>Circuits and Electronics <strong> (6.002 MIT)<br>
+  <td><strong>Circuits and Electronics </strong> (6.002 MIT)<br>
    Lab Assistant: Helped assisting laboratory instruction. </td>
 </tr>
     
 <tr>
   <td class='col-md-1'>Spring 2017, Summer 2016</td>
-  <td><strong>Control Theory <strong> (6.302 MIT)<br>
+  <td><strong>Control Theory </strong> (6.302 MIT)<br>
    Lab Assistant: Helped assisting laboratory instruction. Summer course was via EdX deployed to hundreds of students worldwide.</td>
 </tr>
     
 <tr>
   <td class='col-md-1'>Fall 2016, 2017</td>
-  <td><strong>Introduction to Digital Electronics <strong> (6.072 MIT)<br>
+  <td><strong>Introduction to Digital Electronics </strong> (6.072 MIT)<br>
    Instructor: Created course material and lectures. Managed laboratory sections for 10 students. Introduced labs based on FPGA boards.</td>
 </tr>
     
