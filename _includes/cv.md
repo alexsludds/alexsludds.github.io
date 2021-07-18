@@ -8,36 +8,35 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 
 <table class="table table-hover">
   <tr>
-    <td class="col-md-3"> 2018 - 2023 (Expected) </td>
+    <td class="col-md-3"> 2019 - 2024 (Expected) </td>
     <td>
-        <strong>Ph.D. in Computer Science and Computational Biology </strong>
-          (3.90/4.00)
+        <strong>Ph.D. in Electrical Engineer and Computer Science </strong>
         <br>
-      Brown University (Providence, RI)
+      MIT (Cambridge, MA)
     </td>
   </tr>
   <tr>
-    <td class="col-md-3"> 2018 - 2020 (Expected) </td>
+    <td class="col-md-3"> 2018 - 2019 </td>
     <td>
-        <strong>M.Sc. in Computer Science</strong>
-          (4.00/4.00)
+        <strong>M.Eng. in Electrical Engineering and Computer Science</strong>
         <br>
-      Brown University (Providence, RI)
+      MIT (Cambridge, MA)
     </td>
   </tr>
   <tr>
     <td class="col-md-3"> 2013 - 2017</td>
     <td>
-        <strong>B.Sc. in Bioengineering</strong>
-          (3.67/4.00)
+        <strong>B.Sc. in Electrical Engineering and Computer Science</strong>
         <br>
-      Olin College of Engineering (Needham, MA)
+      MIT (Cambridge, MA)
     </td>
   </tr>
   <tr>
     <td class="col-md-3"> 2008 - 2013</td>
     <td>
-      TEVITOL High School with IB Diploma (Gebze, Turkey)
+      <strong> Associates in Arts and Associates in Science </strong>
+      <br>
+      Brunswick Community College (Supply, NC)
     </td>
   </tr>
 </table>
