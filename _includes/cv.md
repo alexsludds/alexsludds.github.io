@@ -24,7 +24,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
     </td>
   </tr>
   <tr>
-    <td class="col-md-3"> 2013 - 2017</td>
+    <td class="col-md-3"> 2014 - 2018</td>
     <td>
         <strong>B.Sc. in Electrical Engineering and Computer Science</strong>
         <br>
