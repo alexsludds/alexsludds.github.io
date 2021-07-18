@@ -44,7 +44,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 ## <i class="fa fa-chevron-right"></i> Notable Awards and Fellowships
 <table class="table table-hover">
 <tr>
-  <td class='col-md-2'>2020</td>
+  <td class='col-md-2'>2019</td>
   <td>
    Nation Sciecne Foundation Graduation Research Fellowships Program Recipient
     <!--  -->
@@ -52,7 +52,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 </tr>
   
 <tr>
-  <td class='col-md-2'>2016</td>
+  <td class='col-md-2'>2014</td>
   <td>
     Brunswick Community College President's Award (2014) for Highest GPA in graduating class (acquired at same time as high school diploma)
   </td>
