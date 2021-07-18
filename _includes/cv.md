@@ -32,7 +32,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
     </td>
   </tr>
   <tr>
-    <td class="col-md-3"> 2008 - 2013</td>
+    <td class="col-md-3"> 2010 - 2014</td>
     <td>
       <strong> Associates in Arts and Associates in Science </strong>
       <br>
