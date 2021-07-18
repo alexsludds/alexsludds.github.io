@@ -41,26 +41,23 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
   </tr>
 </table>
 
-## <i class="fa fa-chevron-right"></i> Professional Experience
+## <i class="fa fa-chevron-right"></i> Notable Awards and Fellowships
 <table class="table table-hover">
 <tr>
-  <td class='col-md-3'>June 2020 - Sep 2020</td>
-  <td><strong>Microsoft Research: Genomics</strong>, Research Intern (Redmond, WA)</td>
+  <td class='col-md-2'>2020</td>
+  <td>
+   Nation Sciecne Foundation Graduation Research Fellowships Program Recipient
+    <!--  -->
+  </td>
 </tr>
+  
 <tr>
+  <td class='col-md-2'>2016</td>
+  <td>
+    Brunswick Community College President's Award (2014) for Highest GPA in graduating class (acquired at same time as high school diploma)
+  </td>
 </tr>
-<tr>
-  <td class='col-md-3'>June 2017 - August 2018</td>
-  <td><strong>Massachusetts Institute of Technology</strong>, Research Support Associate (Cambridge, MA)</td>
-</tr>
-<tr>
-  <td class='col-md-3'>Jan 2016 - Oct 2016</td>
-  <td><strong>Design That Matters</strong>, Student Engineer (Salem, MA)</td>
-</tr>
-<tr>
-  <td class='col-md-3'>Jan 2015 - Dec 2015</td>
-  <td><strong>Daktari Diagnostics</strong>, Student Engineer (Cambridge, MA)</td>
-</tr>
+
 </table>
 
 ## <i class="fa fa-chevron-right"></i> Research Projects and Publications <a href=""><i class="fa fa-code-fork" aria-hidden="true"></i></a>
@@ -166,58 +163,29 @@ Expression of motility genes is a potentially beneficial but costly process in b
 </tr>
 </table>
 
-## <i class="fa fa-chevron-right"></i> Awards
+## <i class="fa fa-chevron-right"></i> Professional Experience
 <table class="table table-hover">
 <tr>
-  <td class='col-md-2'>2020</td>
-  <td>
-   ICML WCB Fellowship
-    <!--  -->
-  </td>
-</tr>
-<!-- <tr>
-  <td class='col-md-2'>2020</td>
-  <td>
-   ICML WCB Best Poster
-  </td>
-</tr> -->
-<tr>
-  <td class='col-md-2'>2016</td>
-  <td>
-    <a href="https://www.comap.com/undergraduate/contests/mcm/contests/2016/results/2016-ICM_Problem-F-Results.pdf">Meritorius Winner: 2016 MCM/ICM Interdisciplinary Contest in Mathematical Modeling</a>
-    <!--  -->
-  </td>
+  <td class='col-md-3'>June 2020 - Sep 2020</td>
+  <td><strong>Microsoft Research: Genomics</strong>, Research Intern (Redmond, WA)</td>
 </tr>
 <tr>
-  <td class='col-md-2'>2015-2017</td>
-  <td>
-    Olin Alumni Scholarship
-    <!--  -->
-  </td>
 </tr>
 <tr>
-  <td class='col-md-2'>2013-2017</td>
-  <td>
-    <a href="http://impact.olin.edu/2017/scholarships#scholarships">Sunlin Chou International Scholarship</a> (50% tuition)
-    <!--  -->
-  </td>
+  <td class='col-md-3'>June 2017 - August 2018</td>
+  <td><strong>Massachusetts Institute of Technology</strong>, Research Support Associate (Cambridge, MA)</td>
 </tr>
 <tr>
-  <td class='col-md-2'>2013-2017</td>
-  <td>
-    Olin Merit Scholarship (50% tuition)
-    <!--  -->
-  </td>
+  <td class='col-md-3'>Jan 2016 - Oct 2016</td>
+  <td><strong>Design That Matters</strong>, Student Engineer (Salem, MA)</td>
 </tr>
-
 <tr>
-  <td class='col-md-2'>2013</td>
-  <td>
-    <a href="http://info.ifpan.edu.pl/firststep/results/21">Honorable Mention (Instrumentation): First Step to Nobel Prize in Physics</a>
-    <!--  -->
-  </td>
+  <td class='col-md-3'>Jan 2015 - Dec 2015</td>
+  <td><strong>Daktari Diagnostics</strong>, Student Engineer (Cambridge, MA)</td>
 </tr>
 </table>
+
+
 
 ## <i class="fa fa-chevron-right"></i> Invited Talks, and Conferences Presentations
 <ins>Presenters underlined</ins>,  Equal contribution denoted with: *
