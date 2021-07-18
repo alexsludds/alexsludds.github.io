@@ -62,26 +62,24 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 
 ## <i class="fa fa-chevron-right"></i> Research Projects and Publications <a href=""><i class="fa fa-code-fork" aria-hidden="true"></i></a>
 
-<a href="https://scholar.google.com/citations?user=0Tzd6eAAAAAJ&hl=en" class="btn btn-primary" style="padding: 0.3em;">
+<a href="https://scholar.google.com/citations?user=xQ3bAK0AAAAJ&hl=en" class="btn btn-primary" style="padding: 0.3em;">
   <i class="ai ai-google-scholar"></i> Google Scholar
 </a>
 <table class="table table-hover">
 <tr>
-<td class="col-md-3"><a href='https://www.biorxiv.org/content/10.1101/2020.04.28.066787v1' target='_blank'><img src="images/publications/SCOT.png"/></a> </td>
+<td class="col-md-3"><a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'><img src="images/publications/SCOT.png"/></a> </td>
 <td>
-    <strong>Gromov-Wasserstein Optimal Transport to Align Single-Cell Multi-Omics Data</strong><br>
-    <strong>P. Demetci*</strong>, R. Santorella*, B. Sandstede, W. Stafford Noble and Ritambhara Singh# <br>
+    <strong>Freely scalable and reconfigurable optical hardware for deep learning</strong><br>
+    L. Bernstein*#, <strong>A. Sludds*#</strong>, R. Hamerly, V. Sze, J. Emer, D. Englund <br>
      *Equal Contribution, #Corresponding Author<br>
-    International Conference on Research in Computational Molecular Biology (RECOMB) 2021 <br>
+    Nature Scientific Reports <br>
     [5] 
 [<a href='javascript:;'
-    onclick='$("#abs_demetcisantorella").toggle()'>abstract</a>] [<a href='https://www.biorxiv.org/content/10.1101/2020.04.28.066787v1' target='_blank'>paper</a>] <br>
+    onclick='$("#abs_demetcisantorella").toggle()'>abstract</a>] [<a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'>paper</a>] <br>
     
 <div id="abs_demetcisantorella" style="text-align: justify; display: none" markdown="1">
-Data integration of single-cell measurements is critical for our understanding of cell development and disease, but the lack of correspondence between different types of single-cell measurements makes such efforts challenging. Several unsupervised algorithms are capable of aligning heterogeneous types of single-cell measurements in a shared space, enabling the creation of mappings between single cells in different data modalities.
-We present Single-Cell alignment using Optimal Transport (SCOT), an unsupervised learning algorithm that uses Gromov Wasserstein-based optimal transport to align single-cell multi-omics datasets. SCOT calculates a probabilistic coupling matrix that matches cells across two datasets. The optimization uses k-nearest neighbor graphs, thus preserving the local geometry of the data. We use the resulting coupling matrix to project one single-cell dataset onto another via a barycentric projection.  We compare the alignment performance of SCOT with state-of-the-art algorithms on three simulated and two real datasets. Our results demonstrate that SCOT yields results that are comparable in quality to those of competing methods, but SCOT is significantly faster and requires tuning fewer hyperparameters. The code is available at <a href='https://github.com/rsinghlab/SCOT' target='_blank'>https://github.com/rsinghlab/SCOT</a>
+As deep neural network (DNN) models grow ever-larger, they can achieve higher accuracy and solve more complex problems. This trend has been enabled by an increase in available compute power; however, efforts to continue to scale electronic processors are impeded by the costs of communication, thermal management, power delivery and clocking. To improve scalability, we propose a digital optical neural network (DONN) with intralayer optical interconnects and reconfigurable input values. The path-length-independence of optical energy consumption enables information locality between a transmitter and a large number of arbitrarily arranged receivers, which allows greater flexibility in architecture design to circumvent scaling limitations. In a proof-of-concept experiment, we demonstrate optical multicast in the classification of 500 MNIST images with a 3-layer, fully-connected network. We also analyze the energy consumption of the DONN and find that digital optical data transfer is beneficial over electronics when the spacing of computational units is on the order of >10μm.
 </div>
-
 </td>
 </tr>
 
