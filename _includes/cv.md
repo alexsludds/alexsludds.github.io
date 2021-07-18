@@ -1,8 +1,8 @@
-I am a Ph.D. candidate in **computational biology** at **Brown University**, primarily working with [Ritambhara Singh, Ph.D.](rsinghlab.org/) and [Sorin Istrail, Ph.D.](https://www.brown.edu/Research/Istrail_Lab/sorin.php). My research is at the intersection of **computer science**, **molecular biology**,  and **statistics**. My dissertation work is on statistical and probabilistic algorithms for integrated analysis of single-cell multi-omics data.<br>
+I am a Ph.D. Student in **integrated photonics** at **MIT**, working with [Dirk Englund](https://www.rle.mit.edu/qp/). My research interests are large scale and high speed  silicon photonic systems with low energy consumption. In particular, I am focused on demonstrating these systems on applications such as deep learning computation and Ising machines.<br>
 
-Before joining Brown, I received my bachelor’s degree in **bioengineering** from **Olin College of Engineering**. There, I worked with [Jean J. Huang, Ph.D.](http://www.olin.edu/faculty/profile/jean-j-huang/) and [John Geddes, Ph.D.](http://www.olin.edu/faculty/profile/john-b-geddes) on bioinformatic analyses and dynamical modeling of microbial communities under various perturbations. Then, I worked in the [Quantitative Biology Lab](http://gwli.scripts.mit.edu/group/?p=737)  led by [Gene-Wei Li, Ph.D.](https://biology.mit.edu/profile/gene-wei-li/) at the **Massachusetts Institute of Technology (MIT)** as a research support associate and lab manager, researching gene regulatory network rewiring in bacteria. In the summer of 2020, I completed an internship with the [Genomics team](https://www.microsoft.com/en-us/genomics/) at **Microsoft Research.** <br>
+I received my Bachelors of Science and Masters of Engineering Degrees both from MIT in 2018 and 2019 respectively. Earlier projects I have been involved in proposed using balanced homodyne detection as a means of computing vector-vector dot products.
 
-Apart from computational biology, I have enjoyed working on different STEM projects, which can be found [here](/projects/). [Outside of research](/fun/), I enjoy holding boardgame nights with friends, feeding birds, catsitting, playing ukulele and violin, and swimming. Feel free to [e-mail me](mailto:pinardemetci@gmail.com) if you'd like to talk. <br>
+
 
 ## <i class="fa fa-chevron-right"></i> Education
 
