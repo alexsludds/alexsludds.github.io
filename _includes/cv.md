@@ -244,91 +244,114 @@ Expression of motility genes is a potentially beneficial but costly process in b
 <table class="table table-hover">
 <tr>
   <td class='col-md-1'>Spring 2019</td>
-  <td><strong>Advanced Algorithms in Computational Biology and Medical Bioinformatics</strong> (CSCI 2820 @ Brown U.)<br>
-  Teaching Assistant: wrote and graded assignments, held recitations and office hours, lectured a few times.</td>
+  <td><strong>Control Theory</strong> (6.302 @ MIT)<br>
+  Teaching Assistant and Laboratory Assistant: wrote and graded assignments, held recitations and office hours. Assisted in weekly lab assignments.</td>
 </tr>
+  
 <tr>
-  <td class='col-md-1'>Fall 2016</td>
-  <td><strong>Designing Better Drugs </strong> (SCI1240 @ Olin College)<br>
+  <td class='col-md-1'>Fall 2018</td>
+  <td><strong>Graduate Electromagnetics</strong> (6.630 @ MIT)<br>
+   Teaching Assistant: graded assignments, assisted students in the laboratory.</td>
+</tr>
+  
+<tr>
+  <td class='col-md-1'>Spring 2018</td>
+  <td><strong>Undergraduate Electromagnetics</strong> (6.013 @ MIT)<br>
    Teaching and Laboratory Assistant: graded assignments, assisted students in the laboratory.</td>
 </tr>
-</table>
-
-
-## <i class="fa fa-chevron-right"></i> Professional Service and Community Memberships
-<table class="table table-hover">
+  
 <tr>
-    <td class='col-md-2'>2020 - Present </td>
-    <td>
-      Society for Industrial and Applied Mathematics (SIAM)
-      <!--  -->
-    </td>
-  </tr>
-  <tr>
-    <td class='col-md-2'>2018 - Present</td>
-    <td>
-      International Society for Computational Biology (ISCB)
-      <!--  -->
-    </td>
-  </tr>
-  <tr>
-    <td class='col-md-2'>2018 - Present</td>
-    <td>
-      Models, Inference, and Algorithms (MIA) at Broad Institute
-      <!--  -->
-    </td>
-  </tr>
-  <tr>
-    <td class='col-md-2'>Member</td>
-    <td>
-      Graduate Women in Science and Engineering @ Brown University
-      <!--  -->
-    </td>
-  </tr>
+  <td class='col-md-1'>IAP 2018, 2017, 2016</td>
+  <td><strong>Introduction to Signals and Systems <strong> (6.058 @ MIT)<br>
+   Instructor for month long intensive signals and systems course. Created lectures and coursework.</td>
+</tr>
+  
+<tr>
+  <td class='col-md-1'>Fall 2017</td>
+  <td><strong>Machine Learning <strong> (6.036 @ MIT)<br>
+   Lab Assistant: Helped assisting laboratory instruction. </td>
+</tr>
+  
+<tr>
+  <td class='col-md-1'>Fall 2017</td>
+  <td><strong>Circuits and Electronics <strong> (6.002 MIT)<br>
+   Lab Assistant: Helped assisting laboratory instruction. </td>
+</tr>
+    
+<tr>
+  <td class='col-md-1'>Fall 2017</td>
+  <td><strong>Circuits and Electronics <strong> (6.002 MIT)<br>
+   Lab Assistant: Helped assisting laboratory instruction. </td>
+</tr>
+    
+<tr>
+  <td class='col-md-1'>Spring 2017, Summer 2016</td>
+  <td><strong>Control Theory <strong> (6.302 MIT)<br>
+   Lab Assistant: Helped assisting laboratory instruction. Summer course was via EdX deployed to hundreds of students worldwide.</td>
+</tr>
+    
+<tr>
+  <td class='col-md-1'>Fall 2016, 2017</td>
+  <td><strong>Introduction to Digital Electronics <strong> (6.072 MIT)<br>
+   Instructor: Created course material and lectures. Managed laboratory sections for 10 students. Introduced labs based on FPGA boards.</td>
+</tr>
+    
 </table>
 
 ## <i class="fa fa-chevron-right"></i> Skills
 <table class="table table-hover">
+  
 <tr>
-    <td class='col-md-2'>Programming Languages</td>
-    <td>
-      More experienced: Python, R, MATLAB -- Less experienced: Java, C++ 
-      <!--  -->
-    </td>
-  </tr>
-    <tr>
-    <td class='col-md-2'>Frameworks</td>
-    <td>
-      NumPy, Pandas, SciPy, PyTorch, Pyro, TensorFlow, Tensorflow-Probability, HDF5, Bioconductor, Seurat
-      <!--  -->
-    </td>
-  </tr>
-    <tr>
-    <td class='col-md-2'>Systems</td>
-    <td>
-      Linux, OSX, High Performance Cluster Computing, slurm, Google Cloud Computing, Microsoft Azure
-      <!--  -->
-    </td>
-  </tr>
-    <tr>
-    <td class='col-md-2'>Bioinformatics Tools</td>
-    <td>
-     GATK, VCFtools, BCFtools, BEDtools, PLINK, Cromwell, Cytoscape, QIIME, VAMPS, JGI
-      <!--  -->
-    </td>
-  </tr>
-  <tr>
-    <td class='col-md-2'>Laboratory</td>
-    <td>
-      DNA & RNA Extraction, PCR & RT-qPCR, Electrophoresis & PAGE, Western blotting, Molecular transformation, Transfection, HPLC, Rheology, Scanning Electron Microscopy
-      <!--  -->
-    </td>
-  </tr>
-   <tr>
-    <td class='col-md-2'>Natural Languages</td>
-    <td>
-      English (Proficient), Turkish (Native Language), French (A2-Level proficiency)
-      <!--  -->
-    </td>
-  </tr>
+  <td class='col-md-2'>Integrated Photonic Design</td>
+  <td>
+    I have fabricated and tested several large scale silicon photonic chips in commercial CMOS pilot line foundries. Several of these systems have hundreds of active photonic devices which are used simultaneously. 
+    
+    Tools:
+    Proficient: Lumerical FDTD, Lumerical Mode, Synopsys Optisim
+    Moderate experience: Lumerical Charge, Lumerical Heat, Synopsys RSOFT
+  </td>
+</tr>
+  
+<tr>
+  <td class='col-md-2'>Packaging</td>
+  <td>
+    Create multiple custom packages for silicon photonic ICs that are capable of of supporting high frequency (>20GHz) signals with many (>200) bond wires with a high degree of mechanical and temperature stability (<0.01 degrees drift over weeks timescales).
+  </td>
+</tr>
+  
+<tr>
+  <td class='col-md-2'>Fabrication</td>
+  <td>
+    Fabrication experience in university fabrication facilities (MIT NANO) doing deposition, photolithography and etching to create mechanical, electrical, and optical devices.
+  </td>
+</tr>
+  
+<tr>
+  <td class='col-md-2'>Analog Circuit Design</td>
+  <td>
+    Created multiple analog systems included a custom highly sensitive optical receiver with 220fF of capacitance.
+  </td>
+</tr>
+  
+<tr>
+  <td class='col-md-2'>Programming Languages</td>
+  <td>
+    Very proficient: Python
+    Moderate experience: C++, Matlab
+  </td>
+</tr>
+  
+<tr>
+<td class='col-md-2'>Software Tools</td>
+<td>
+  Very Proficient: NumPy, Pandas, SciPy, Matplotlib
+</td>
+</tr>
+  
+<tr>
+<td class='col-md-2'>Operating Systems</td>
+<td>
+  Linux, Windows, OSX
+</td>
+</tr>
 </table>
