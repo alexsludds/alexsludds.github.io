@@ -66,6 +66,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
   <i class="ai ai-google-scholar"></i> Google Scholar
 </a>
 <table class="table table-hover">
+  
 <tr>
 <td class="col-md-3"><a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'><img src="images/publications/freely_scalable.jpg"/></a> </td>
 <td>
@@ -80,6 +81,22 @@ As deep neural network (DNN) models grow ever-larger, they can achieve higher ac
 </div>
 </td>
 </tr>
+  
+
+<tr>
+<td class="col-md-3"><a href='https://journals.aps.org/prx/abstract/10.1103/PhysRevX.9.021032' target='_blank'><img src="images/publications/prx.png"/></a> </td>
+<td>
+    <strong>Large-Scale Optical Neural Networks Based on Photoelectric Multiplication</strong><br>
+  Ryan Hamerly, Liane Bernstein, <strong>Alexander Sludds</strong>, Marin Soljačić, and Dirk Englund <br>
+    Physical Review X<br>
+    [<a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'>paper</a>] <br>
+    
+<div id="abs_demetcisantorella" style="text-align: justify; display: none" markdown="1">
+Recent success in deep neural networks has generated strong interest in hardware accelerators to improve speed and energy consumption. This paper presents a new type of photonic accelerator based on coherent detection that is scalable to large (N≳106) networks and can be operated at high (gigahertz) speeds and very low (subattojoule) energies per multiply and accumulate (MAC), using the massive spatial multiplexing enabled by standard free-space optical components. In contrast to previous approaches, both weights and inputs are optically encoded so that the network can be reprogrammed and trained on the fly. Simulations of the network using models for digit and image classification reveal a “standard quantum limit” for optical neural networks, set by photodetector shot noise. This bound, which can be as low as 50  zJ/MAC, suggests that performance below the thermodynamic (Landauer) limit for digital irreversible computation is theoretically possible in this device. The proposed accelerator can implement both fully connected and convolutional networks. We also present a scheme for backpropagation and training that can be performed in the same hardware. This architecture will enable a new class of ultralow-energy processors for deep learning.
+</div>
+</td>
+</tr>
+  
 </table>
 
 
