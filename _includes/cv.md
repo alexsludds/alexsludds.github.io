@@ -73,9 +73,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
     L. Bernstein*#, <strong>A. Sludds*#</strong>, R. Hamerly, V. Sze, J. Emer, D. Englund <br>
      *Equal Contribution, #Corresponding Author<br>
     Nature Scientific Reports <br>
-    [5] 
-[<a href='javascript:;'
-    onclick='$("#abs_demetcisantorella").toggle()'>abstract</a>] [<a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'>paper</a>] <br>
+    [<a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'>paper</a>] <br>
     
 <div id="abs_demetcisantorella" style="text-align: justify; display: none" markdown="1">
 As deep neural network (DNN) models grow ever-larger, they can achieve higher accuracy and solve more complex problems. This trend has been enabled by an increase in available compute power; however, efforts to continue to scale electronic processors are impeded by the costs of communication, thermal management, power delivery and clocking. To improve scalability, we propose a digital optical neural network (DONN) with intralayer optical interconnects and reconfigurable input values. The path-length-independence of optical energy consumption enables information locality between a transmitter and a large number of arbitrarily arranged receivers, which allows greater flexibility in architecture design to circumvent scaling limitations. In a proof-of-concept experiment, we demonstrate optical multicast in the classification of 500 MNIST images with a 3-layer, fully-connected network. We also analyze the energy consumption of the DONN and find that digital optical data transfer is beneficial over electronics when the spacing of computational units is on the order of >10μm.
