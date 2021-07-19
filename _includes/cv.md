@@ -80,6 +80,7 @@ As deep neural network (DNN) models grow ever-larger, they can achieve higher ac
 </div>
 </td>
 </tr>
+</table>
 
 
 ## <i class="fa fa-chevron-right"></i> Teaching Experience
