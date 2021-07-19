@@ -46,7 +46,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 <tr>
   <td class='col-md-2'>2019</td>
   <td>
-   Nation Sciecne Foundation Graduation Research Fellowships Program Recipient
+   National Science Foundation Graduation Research Fellowships Program Recipient
     <!--  -->
   </td>
 </tr>
@@ -67,6 +67,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 </a>
 <table class="table table-hover">
 <tr>
+  a
 <td class="col-md-3"><a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'><img src="images/publications/freely_scalable.jpg"/></a> </td>
 <td>
     <strong>Freely scalable and reconfigurable optical hardware for deep learning</strong><br>
