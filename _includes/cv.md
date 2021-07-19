@@ -67,7 +67,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 </a>
 <table class="table table-hover">
 <tr>
-<td class="col-md-3"><a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'><img src="images/publications/SCOT.png"/></a> </td>
+<td class="col-md-3"><a href='https://www.nature.com/articles/s41598-021-82543-3' target='_blank'><img src="images/publications/freely_scalable.jpg"/></a> </td>
 <td>
     <strong>Freely scalable and reconfigurable optical hardware for deep learning</strong><br>
     L. Bernstein*#, <strong>A. Sludds*#</strong>, R. Hamerly, V. Sze, J. Emer, D. Englund <br>
