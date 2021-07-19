@@ -82,84 +82,8 @@ As deep neural network (DNN) models grow ever-larger, they can achieve higher ac
 </div>
 </td>
 </tr>
-
-
-<tr>
-<td class="col-md-3"><a href='https://www.biorxiv.org/content/10.1101/2020.06.13.149195v1' target='_blank'><img src="images/publications/alignment.png"/></a> </td>
-<td>
-    <strong> Unsupervised Manifold Alignment for Single-Cell Multi-Omics Data</strong><br>
-    R. Singh#, <strong>P. Demetci</strong>, G. Bonora, V. Ramani, C. Lee, H. Fang, Z. Duan, X. Deng, J. Shendure, C. Disteche and W. Stafford Noble#<br>
-     #Corresponding Authors<br>
-    Proceedings of the 11th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics (ACM BCB 2020)<br>
-    
-    [4] 
-[<a href='javascript:;'
-    onclick='$("#abs_singhdemetci").toggle()'>abstract</a>] [<a href='https://dl.acm.org/doi/10.1145/3388440.3412410' target='_blank'>paper</a>] <br>
-    
-<div id="abs_singhdemetci" style="text-align: justify; display: none" markdown="1">
-Integrating single-cell measurements that capture different properties of the genome is vital to extending our understanding of genome biology.This task is challenging due to the lack of a shared axis across datasets obtained from different types of single-cell experiments. For most such datasets, we lack corresponding information among the cells (samples) and the measurements (features). In this scenario, unsupervised algorithms that are capable of aligning single-cell experiments are critical to learning an in silico co-assay that can help draw correspondences among the cells.Maximum mean discrepancy-based manifold alignment (MMD-MA) is such an unsupervised algorithm. Without requiring correspondence information, it can align single-cell datasets from different modalities in a common shared latent space, showing promising results on simulations and a small-scale single-cell experiment with 61 cells.However, it is essential to explore the applicability of this method to larger single-cell experiments with thousands of cells so that it can be of practical interest to the community.In this paper, we apply MMD-MA to two recent datasets that measure transcriptome and chromatin accessibility in ~2000 single cells. To scale the runtime of MMD-MA to a more substantial number of cells, we extend the original implementation to run on GPUs. We also introduce a method to automatically select one of the user-defined parameters, thus reducing the hyperparameter search space. We demonstrate that the proposed extensions allow MMD-MA to accurately align state-of-the-art single-cell experiments.
-</div>
-
-</td>
-</tr>
-
-
-<tr>
-<td class="col-md-3"><a href='https://www.iscb.org/cms_addon/conferences/ismb2020/proceedings.php' target='_blank'><img src="images/publications/HAPLEX.png"/></a> </td>
-<td>
-    <strong>Combinatorial and statistical prediction of gene expression from haplotype sequence</strong><br>
-    B. Alpay*, <strong>P. Demetci*</strong> Sorin Istrail, and Derek Aguiar# <br>
-     *Equal Contribution, #Corresponding Author<br>
-     Bioinformatics (Oxford Press) vol.36, Supplement_1, p:i194-i202. 2020 <br>
-    Proceedings of the 27th International Conference on Intelligent Systems for Molecular Biology (ISMB 2020)<br>
-    
-    [3] 
-[<a href='javascript:;'
-    onclick='$("#abs_alpaydemetci").toggle()'>abstract</a>] [<a href='https://www.iscb.org/cms_addon/conferences/ismb2020/proceedings.php' target='_blank'>paper</a>] <br>
-    
-<div id="abs_alpaydemetci" style="text-align: justify; display: none" markdown="1">
-Genome-wide association studies (GWAS) have discovered thousands of significant genetic effects on disease phenotypes.By considering gene expression as the intermediary between genotype and disease phenotype, eQTL studies have interpreted many of these variants by their regulatory effects on gene expression. However, there remains a considerable gap between genotype-to-gene expression association and genotype-to-gene expression prediction. Accurate prediction of gene expression enables gene-based association studies to be performed post-hoc for existing GWAS, reduces multiple testing burden, and can prioritize genes for subsequent experimental investigation.In this work, we develop gene expression prediction methods that relax the independence and additivity assumptions between genetic markers. First, we consider gene expression prediction from a regression perspective and develop the HAPLEXR algorithm which combines haplotype clusterings with allelic dosages. Second, we introduce the new gene expression classification problem, which focuses on identifying expression groups rather than continuous measurements; we formalize the selection of an appropriate number of expression groups using the principle of maximum entropy. Third, we develop the HAPLEXD algorithm that models haplotype sharing with a modified suffix tree data structure and computes expression groups by spectral clustering. In both models, we penalize model complexity by prioritizing genetic clusters that indicate significant effects on expression. We compare HAPLEXR and HAPLEXD with three state-of-the-art expression prediction methods and two novel logistic regression approaches across five GTEx v8 tissues. HAPLEXD exhibits significantly higher classification accuracy overall; HAPLEXR shows higher prediction accuracy on approximately half of the genes tested and the largest number of best predicted genes ($r^2>0.1$) among all methods.
-We show that variant and haplotype features selected by HAPLEXR are smaller in size than competing methods (and thus more interpretable) and are significantly enriched in functional annotations related to gene regulation. These results demonstrate the importance of explicitly modelling non-dosage dependent and intragenic epistatic effects when predicting expression.
-</div>
-
-</td>
-</tr>
-
-<tr>
-<td class="col-md-3"><a href='https://jb.asm.org/content/early/2019/07/03/JB.00259-19/figures-only?versioned=true' target='_blank'><img src="images/publications/ecoli.png"/></a> </td>
-<td>
-    <strong>Rapid accumulation of motility-activating mutations in resting liquid culture of <em>Escherichia coli</em></strong><br>
-    D. Parker*, <strong>P.Demetci*</strong>, and G.W. Li# <br>
-     *Equal Contribution,  #Corresponding Author<br>
-    Journal of Bacteriology, 2019<br>
-    
-    [2] 
-[<a href='javascript:;'
-    onclick='$("#abs_parkerdemetci").toggle()'>abstract</a>] [<a href='https://jb.asm.org/content/early/2019/07/03/JB.00259-19/figures-only?versioned=true' target='_blank'>paper</a>] <br>
-    
-<div id="abs_parkerdemetci" style="text-align: justify; display: none" markdown="1">
-Expression of motility genes is a potentially beneficial but costly process in bacteria. Interestingly, many isolate strains of _Escherichia coli_ possess motility genes but have lost the ability to activate them in conditions in which motility is advantageous, raising the question of how they respond to these situations. Through transcriptome profiling of strains in the _E. coli_ single-gene knockout Keio collection, we noticed drastic upregulation of motility genes in many of the deletion strains as compared to its weakly motile parent strain (BW25113). We show that this switch to a motile phenotype is not a direct consequence of the genes deletec, but is instead due to a variety of secondary mutations that increase the expression of the major motility regulator, FlhDC. Importantly, we find that this switch can be reproduced by growing poorly motile _E. coli_ strains in non-shaking liquid medium overnight but not in shaking liquid medium. Individual isolates after the non-shaking overnight incubations acquired distinct mutations upstream of the _flhDC_ operon, including different insertion sequence (IS) elements and, to a lesser extent, point mutations. The rapid sweep in the non-shaking population shows that poorly motile strains can quickly adapt to a motile lifestyle by genetic rewiring. 
-</div>
-</td>
-</tr>
-
-<tr>
-<td class="col-md-3"><a href='https://ieeexplore.ieee.org/abstract/document/7757463' target='_blank'><img src="images/publications/blank.png"/></a> </td>
-<td>
-    <strong>Internalization and externalization in the classroom: How do they emerge and why is it important?</strong><br>
-     <strong>P.Demetci</strong>, C. Nichols, Y. V. Zastavker, J. D. Stolk, A. Dillon, M. D. Gross.<br>
-    IEEE, 2016<br>
-    FIE Conference, 2016<br>
-    
-    [1] 
-[<a href='javascript:;'
-    onclick='$("#abs_demetcinichols").toggle()'>abstract</a>] [<a href='https://ieeexplore.ieee.org/abstract/document/7757463'  target='_blank'>paper</a>] <br>  
-<div id="abs_demetcinichols" style="text-align: justify; display: none" markdown="1">
-“I felt so dumb, and it's not fair that I cannot grasp this information to save my life, and other people can with no problem.” Why do some students feel empowered in the classroom, and feel they have control over their own learning, while others do not? Our qualitative investigation is a part of a larger mixed-methods study about students' situational motivations in introductory STEM courses. We used grounded theory to analyze students' responses to surveys about emotion, course relevance, and motivation. We investigated two emergent phenomena we called “internalization” and “externalization.” Our definitions of these are based on a student's perception of who or what influences the outcomes of their activities: the students themselves, or external factors such as the instructor, peers, or the educational system as a whole. Our findings indicate that (1) internalization correlates with cognitive autonomy, students' perception of course content having high personal relevance, and group projects in project-based learning environments; and (2) externalization correlates with lecture-based environments and students' perceptions of lack of personal relevance in the course content. Our analyses suggest that project-based learning environments may serve to empower students, but only when course content is found to be relevant.
-</div>
-</td>
-</tr>
-</table>
+  
+  
 
 ## <i class="fa fa-chevron-right"></i> Professional Experience
 <table class="table table-hover">
