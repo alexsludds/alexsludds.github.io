@@ -164,7 +164,7 @@ Recent success in deep neural networks has generated strong interest in hardware
 <tr>
   <td class='col-md-2'>Integrated Photonic Design</td>
   <td>
-    I have fabricated and tested several large scale silicon photonic chips in commercial CMOS pilot line foundries. Several of these systems have hundreds of active photonic devices which are used simultaneously. 
+    I have led tapeouts in CMOS pilot Line foundries (AIM photonics) on multiple ocassions for both my own designs and incorporating designs more many individuals. I have fabricated and tested several large scale silicon photonic chips in commercial CMOS pilot line foundries. Many of these systems have hundreds of active photonic devices which are used simultaneously. 
     
     Tools:
     Proficient: Lumerical FDTD, Lumerical Mode, Synopsys Optisim
