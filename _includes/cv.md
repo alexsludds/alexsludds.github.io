@@ -71,7 +71,7 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 <td class="col-md-3"><a href='https://arxiv.org/abs/2203.05466' target='_blank'><img src="images/publications/netcast.png"/></a> </td>
 <td>
     <strong>Freely scalable and reconfigurable optical hardware for deep learning</strong><br>
-    <strong>A. Sludds*#</strong>, S. Bandyopadhyay, Z. Chen, Z. Zhong, L. Bernstein, D. Bunandar, M. Streshinsky, A. Novack, T. Baehr-Jones, M. Hochberg, N. Ghobadi, R. Hamerly, D. Englund <br>
+    <strong>A. Sludds*</strong>, S. Bandyopadhyay, Z. Chen, Z. Zhong, L. Bernstein, D. Bunandar, M. Streshinsky, A. Novack, T. Baehr-Jones, M. Hochberg, M. Ghobadi, R. Hamerly, D. Englund <br>
     arXiv Preprint <br>
     [<a href='https://arxiv.org/abs/2203.05466' target='_blank'>paper</a>] <br>
     
