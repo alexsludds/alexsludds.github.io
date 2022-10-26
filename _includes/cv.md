@@ -68,12 +68,12 @@ I received my Bachelors of Science and Masters of Engineering Degrees both from 
 <table class="table table-hover">
   
 <tr>
-<td class="col-md-3"><a href='https://arxiv.org/abs/2203.05466' target='_blank'><img src="images/publications/netcast.png"/></a> </td>
+<td class="col-md-3"><a href='https://www.science.org/stoken/author-tokens/ST-814/full' target='_blank'><img src="images/publications/netcast.png"/></a> </td>
 <td>
     <strong>Delocalized Photonic Deep Learning on the Internet's Edge</strong><br>
     <strong>A. Sludds*</strong>, S. Bandyopadhyay, Z. Chen, Z. Zhong, J. Cochrane, L. Bernstein, D. Bunandar, P. Ben Dixon, S. Hamilton, M. Streshinsky, A. Novack, T. Baehr-Jones, M. Hochberg, M. Ghobadi, R. Hamerly, D. Englund <br>
     Science 2022 <br>
-    [<a href='https://www.science.org/doi/10.1126/science.abq8271' target='_blank'>paper</a>] <br>
+    [<a href='https://www.science.org/stoken/author-tokens/ST-814/full' target='_blank'>paper</a>] <br>
     
 <div id="abs_demetcisantorella" style="text-align: justify; display: none" markdown="1">
 Advances in deep neural networks (DNNs) are transforming science and technology. However, the increasing computational demands of the most powerful DNNs limit deployment on low-power devices, such as smartphones and sensors -- and this trend is accelerated by the simultaneous move towards Internet-of-Things (IoT) devices. Numerous efforts are underway to lower power consumption, but a fundamental bottleneck remains due to energy consumption in matrix algebra, even for analog approaches including neuromorphic, analog memory and photonic meshes. Here we introduce and demonstrate a new approach that sharply reduces energy required for matrix algebra by doing away with weight memory access on edge devices, enabling orders of magnitude energy and latency reduction. At the core of our approach is a new concept that decentralizing the DNN for delocalized, optically accelerated matrix algebra on edge devices. Using a silicon photonic smart transceiver, we demonstrate experimentally that this scheme, termed Netcast, dramatically reduces energy consumption. We demonstrate operation in a photon-starved environment with 40 aJ/multiply of optical energy for 98.8% accurate image recognition and <1 photon/multiply using single photon detectors. Furthermore, we show realistic deployment of our system, classifying images with 3 THz of bandwidth over 86 km of deployed optical fiber in a Boston-area fiber network. Our approach enables computing on a new generation of edge devices with speeds comparable to modern digital electronics and power consumption that is orders of magnitude lower
