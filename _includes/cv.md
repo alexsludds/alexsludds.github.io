@@ -1,8 +1,6 @@
-I am a Ph.D. Student in **integrated photonics** at **MIT**, working with [Dirk Englund](https://www.rle.mit.edu/qp/). My research interests are large scale and high speed  silicon photonic systems with low energy consumption. In particular, I am focused on demonstrating these systems on applications such as deep learning computation and Ising machines.<br>
+I'm a researcher and engineer focused on silicon photonics for creating large scale systems. I performed my graduate research under Professor [Dirk Englund](https://www.rle.mit.edu/qp/) at MIT, focusing on how to bring the computing power of the best digital machine learning accelerators to sensor devices with milliwatt class power consumptions. <br>
 
-I received my Bachelors of Science and Masters of Engineering Degrees both from MIT in 2018 and 2019 respectively. Earlier projects I have been involved in proposed using balanced homodyne detection as a means of computing vector-vector dot products.
-
-
+I received my Bachelors of Science, Masters of Engineering and Ph.D Degrees from MIT in 2018, 2019 and 2023 respectively. 
 
 ## <i class="fa fa-chevron-right"></i> Education
 
