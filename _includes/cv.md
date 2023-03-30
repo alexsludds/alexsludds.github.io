@@ -1,6 +1,7 @@
 I'm a researcher and engineer focused on silicon photonics for creating large scale systems. I performed my graduate research under Professor [Dirk Englund](https://www.rle.mit.edu/qp/) at MIT, focusing on how to bring the computing power of the best digital machine learning accelerators to sensor devices with milliwatt class power consumptions. <br>
 
 I received my Bachelors of Science, Masters of Engineering and Ph.D Degrees from MIT in 2018, 2019 and 2023 respectively. 
+I now work at [Lightmatter corporation](https://lightmatter.co/), enabling next-generation supercomputing systems using photonics.
 
 ## <i class="fa fa-chevron-right"></i> Education
 
