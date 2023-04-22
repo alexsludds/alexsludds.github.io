@@ -20,7 +20,6 @@ title: Alex Sludds
     {% endunless %}
   {% endfor %}
 </table>
-<h4><a href="/blog">View all</a></h4>
 
 ## <i class="fa fa-chevron-right"></i> Fun Side Projects
 + [CS conference tracker](https://github.com/bamos/conference-tracker).
