@@ -114,6 +114,9 @@ Recent success in deep neural networks has generated strong interest in hardware
   
 </table>
 
+My thesis defense can be viewed here:
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/797079017?h=485b115573" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+
 
 ## <i class="fa fa-chevron-right"></i> Teaching Experience
 <table class="table table-hover">
