@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/pinardemetci/pinardemetci.github.io.svg?branch=master)](https://travis-ci.org/pinardemetci/pinardemetci.github.io)
 
+# NOTE TO SELF: To update webpage change cv.md in _includes/
+
 # About
 This is the source code for my personal website.
 Unless stated otherwise, all content is MIT-licensed.
