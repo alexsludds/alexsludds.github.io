@@ -9,9 +9,9 @@ I now work at [Lightmatter corporation](https://lightmatter.co/), enabling next-
   <tr>
     <td class="col-md-3"> 2023 -  </td>
     <td>
-        <strong>Lightmatter Corporation </strong>
+        <strong>Photonic Architect </strong>
         <br>
-      Lightmatter (Boston, MA)
+      Lightmatter Corporation (Boston, MA)
     </td>
   </tr>
 </table>
