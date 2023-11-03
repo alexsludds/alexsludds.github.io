@@ -3,6 +3,19 @@ I'm a researcher and engineer focused on silicon photonics for creating large sc
 I received my Bachelors of Science, Masters of Engineering and Ph.D Degrees from MIT in 2018, 2019 and 2023 respectively. 
 I now work at [Lightmatter corporation](https://lightmatter.co/), enabling next-generation supercomputing systems using photonics.
 
+## <i class="fa fa-chevron-right"></i> Work Experience
+
+<table class="table table-hover">
+  <tr>
+    <td class="col-md-3"> 2023 -  </td>
+    <td>
+        <strong>Lightmatter Corporation </strong>
+        <br>
+      Lightmatter (Boston, MA)
+    </td>
+  </tr>
+</table>
+
 ## <i class="fa fa-chevron-right"></i> Education
 
 <table class="table table-hover">
