@@ -1,13 +1,28 @@
-I'm a researcher and engineer focused on silicon photonics for creating large scale systems. I performed my graduate research under Professor [Dirk Englund](https://www.rle.mit.edu/qp/) at MIT, focusing on how to bring the computing power of the best digital machine learning accelerators to sensor devices with milliwatt class power consumptions. <br>
+I'm a engineer focused on using silicon photonics and analog electronics to build large scale systems. 
+
+I now work at [AMD](https://www.amd.com/en.html) as an analog designer.
+Previous I was at [Lightmatter corporation](https://lightmatter.co/), building co-packaged optics systems.
+Some examples of things I worked on:
+[A 1.6T per fiber CPO transceiver](https://lightmatter.co/press-release/lightmatter-achieves-record-1-6-tbps-per-fiber-to-accelerate-ai-optical-interconnect/)
+[The worlds highest datarate optical transceiver (100T)](https://lightmatter.co/press-release/lightmatter-unveils-passage-m1000-photonic-superchip-worlds-fastest-ai-interconnect/)
+[A CPO product](https://lightmatter.co/press-release/lightmatter-announces-passage-l200-the-fastest-co-packaged-optics-for-ai/)
+[A first demonstration of DWDM bidi. Very similar to OCI-MSA.](https://lightmatter.co/press-release/lightmatter-achieves-world-first-16-wavelength-bidirectional-link-on-single-mode-optical-fiber/)
 
 I received my Bachelors of Science, Masters of Engineering and Ph.D Degrees from MIT in 2018, 2019 and 2023 respectively. 
-I now work at [Lightmatter corporation](https://lightmatter.co/), enabling next-generation supercomputing systems using photonics.
+I performed my graduate research under Professor [Dirk Englund](https://www.rle.mit.edu/qp/) at MIT, focusing on [how to bring the computing power of the best digital machine learning accelerators to sensor devices with milliwatt class power consumptions](https://www.science.org/doi/10.1126/science.abq8271). <br>
+
 
 ## <i class="fa fa-chevron-right"></i> Work Experience
 
 <table class="table table-hover">
   <tr>
-    <td class="col-md-3"> 2023 -  </td>
+    <td class="col-md-3"> 2026 -  </td>
+    <td>
+        <strong>Analog Designer </strong>
+        <br>
+         AMD (Boston, MA)
+    </td>
+    <td class="col-md-3"> 2023 -  2026</td>
     <td>
         <strong>Photonic Architect </strong>
         <br>
