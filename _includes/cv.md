@@ -2,7 +2,7 @@ I'm a engineer focused on using silicon photonics and analog electronics to buil
 
 I now work at [AMD](https://www.amd.com/en.html) as an analog designer.
 Previous I was at [Lightmatter corporation](https://lightmatter.co/), building co-packaged optics systems.
-Some examples of things I worked on:
+Some examples of things I worked on: <br>
 [A 1.6T per fiber CPO transceiver](https://lightmatter.co/press-release/lightmatter-achieves-record-1-6-tbps-per-fiber-to-accelerate-ai-optical-interconnect/)<br>
 [The worlds highest datarate optical transceiver (100T)](https://lightmatter.co/press-release/lightmatter-unveils-passage-m1000-photonic-superchip-worlds-fastest-ai-interconnect/)<br>
 [A CPO product](https://lightmatter.co/press-release/lightmatter-announces-passage-l200-the-fastest-co-packaged-optics-for-ai/)<br>
