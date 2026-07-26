@@ -3,10 +3,10 @@ I'm a engineer focused on using silicon photonics and analog electronics to buil
 I now work at [AMD](https://www.amd.com/en.html) as an analog designer.
 Previous I was at [Lightmatter corporation](https://lightmatter.co/), building co-packaged optics systems.
 Some examples of things I worked on:
-[A 1.6T per fiber CPO transceiver](https://lightmatter.co/press-release/lightmatter-achieves-record-1-6-tbps-per-fiber-to-accelerate-ai-optical-interconnect/)
-[The worlds highest datarate optical transceiver (100T)](https://lightmatter.co/press-release/lightmatter-unveils-passage-m1000-photonic-superchip-worlds-fastest-ai-interconnect/)
-[A CPO product](https://lightmatter.co/press-release/lightmatter-announces-passage-l200-the-fastest-co-packaged-optics-for-ai/)
-[A first demonstration of DWDM bidi. Very similar to OCI-MSA.](https://lightmatter.co/press-release/lightmatter-achieves-world-first-16-wavelength-bidirectional-link-on-single-mode-optical-fiber/)
+[A 1.6T per fiber CPO transceiver](https://lightmatter.co/press-release/lightmatter-achieves-record-1-6-tbps-per-fiber-to-accelerate-ai-optical-interconnect/)<br>
+[The worlds highest datarate optical transceiver (100T)](https://lightmatter.co/press-release/lightmatter-unveils-passage-m1000-photonic-superchip-worlds-fastest-ai-interconnect/)<br>
+[A CPO product](https://lightmatter.co/press-release/lightmatter-announces-passage-l200-the-fastest-co-packaged-optics-for-ai/)<br>
+[A first demonstration of DWDM bidi. Very similar to OCI-MSA.](https://lightmatter.co/press-release/lightmatter-achieves-world-first-16-wavelength-bidirectional-link-on-single-mode-optical-fiber/)<br>
 
 I received my Bachelors of Science, Masters of Engineering and Ph.D Degrees from MIT in 2018, 2019 and 2023 respectively. 
 I performed my graduate research under Professor [Dirk Englund](https://www.rle.mit.edu/qp/) at MIT, focusing on [how to bring the computing power of the best digital machine learning accelerators to sensor devices with milliwatt class power consumptions](https://www.science.org/doi/10.1126/science.abq8271). <br>
