@@ -20,13 +20,15 @@ I performed my graduate research under Professor [Dirk Englund](https://www.rle.
     <td>
         <strong>Analog Designer </strong>
         <br>
-         AMD (Boston, MA)
+        AMD (Boston, MA)
     </td>
+  </tr>
+  <tr>
     <td class="col-md-3"> 2023 -  2026</td>
     <td>
         <strong>Photonic Architect </strong>
         <br>
-      Lightmatter Corporation (Boston, MA)
+        Lightmatter Corporation (Boston, MA)
     </td>
   </tr>
 </table>
