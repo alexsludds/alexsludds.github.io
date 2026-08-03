@@ -1,0 +1,230 @@
+---
+layout: singlePage
+title: Two-ring coupled resonator filter | Alex Sludds
+permalink: /widgets/ring-filter/
+---
+
+<style>
+#rf{--ink:#333;--muted:#888;--rule:#ddd;--grid:#eee;--acc:#4582ec;--drop:#4582ec;--thru:#d9534f;
+    --mono:Menlo,Consolas,"DejaVu Sans Mono",monospace}
+#rf p.lede{color:var(--muted);max-width:64ch}
+#rf .eq{font-family:var(--mono);font-size:13px;line-height:2.1;
+  border-left:3px solid var(--rule);padding:.35rem 0 .35rem 1rem;margin:0 0 1.5rem;
+  overflow-x:auto;white-space:nowrap}
+#rf .eq span{color:var(--muted)}
+#rf .plot{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:10px 8px 4px}
+#rf canvas{display:block;width:100%;height:340px;touch-action:none;max-width:none}
+#rf .key{display:flex;gap:20px;font-family:var(--mono);font-size:11.5px;
+  color:var(--muted);padding:2px 6px 8px}
+#rf .key i{display:inline-block;width:20px;height:0;border-top-width:2px;
+  vertical-align:.28em;margin-right:7px}
+#rf .readout{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  min-height:1.4em;padding:6px 6px 2px}
+#rf .panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1rem 2rem;margin:1.75rem 0 0}
+#rf .ctl{display:flex;align-items:center;gap:.65rem}
+#rf .ctl label{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  min-width:74px;margin:0;font-weight:normal}
+#rf .ctl input[type=range]{flex:1;min-width:0;accent-color:var(--acc);height:18px;padding:0}
+#rf .ctl input[type=number]{width:72px;font-family:var(--mono);font-size:12px;
+  padding:4px 6px;border:1px solid var(--rule);border-radius:2px}
+#rf .ctl output{font-family:var(--mono);font-size:12px;min-width:52px;text-align:right;
+  font-variant-numeric:tabular-nums}
+#rf .unit{font-family:var(--mono);font-size:12px;color:var(--muted)}
+#rf button{font-family:var(--mono);font-size:11.5px;color:var(--ink);background:#fff;
+  border:1px solid var(--rule);border-radius:2px;padding:7px 12px;cursor:pointer}
+#rf button:hover{border-color:var(--muted)}
+#rf .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);
+  border-radius:4px;margin:2rem 0 0;overflow:hidden}
+#rf .stat{background:#fff;padding:.7rem .85rem}
+#rf .stat dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 .25rem;font-weight:normal}
+#rf .stat dd{margin:0;font-family:var(--mono);font-size:17px;
+  font-variant-numeric:tabular-nums}
+#rf .note{font-size:13px;color:var(--muted);max-width:64ch}
+#rf .note code{font-family:var(--mono);font-size:12px}
+@media (max-width:520px){#rf canvas{height:260px}}
+</style>
+
+<div id="rf">
+
+<h2>Two-ring coupled resonator filter</h2>
+
+<p class="lede">Drop- and through-port spectra for a series-coupled double
+microring add-drop filter, from the exact transfer-matrix solution. Two identical
+rings, identical bus couplers. Drag anything; the traces recompute on every frame.</p>
+
+<div class="eq">
+H<sub>d</sub> = &nbsp;j&#183;&#954;&#8321;&#178;&#954;&#8322;&#183;x &nbsp;<span>/</span>&nbsp; D(x)<br>
+H<sub>t</sub> = &nbsp;t&#8321; &#8722; t&#8322;(1+t&#8321;&#178;)&#183;x + t&#8321;&#183;x&#178; &nbsp;<span>/</span>&nbsp; D(x)<br>
+<span>D(x) = 1 &#8722; 2t&#8321;t&#8322;&#183;x + t&#8321;&#178;&#183;x&#178; &nbsp;&nbsp; x = a&#183;e<sup>&#8722;j&#966;</sup> &nbsp;&nbsp; &#966; = 2&#960;n<sub>eff</sub>L/&#955; &nbsp;&nbsp; t&#178;+&#954;&#178;=1</span>
+</div>
+
+<div class="plot">
+  <div class="key">
+    <span><i style="border-top-style:solid;border-top-color:#4582ec"></i>drop &#124;H<sub>d</sub>&#124;&#178;</span>
+    <span><i style="border-top-style:dashed;border-top-color:#d9534f"></i>thru &#124;H<sub>t</sub>&#124;&#178;</span>
+  </div>
+  <canvas id="rfcv" role="img" aria-label="Drop and through port transmission in decibels versus frequency detuning">Drop port passband and through port notch versus detuning.</canvas>
+  <div class="readout" id="rfro">hover the plot to read values</div>
+</div>
+
+<div class="panel">
+  <div class="ctl"><label for="rfk1">&#954;&#8321; = &#954;&#8323;</label><input type="range" id="rfk1" min="0.05" max="0.70" step="0.01" value="0.35"><output id="rfok1">0.35</output></div>
+  <div class="ctl"><label for="rfk2">&#954;&#8322;</label><input type="range" id="rfk2" min="0.005" max="0.35" step="0.005" value="0.065"><output id="rfok2">0.065</output></div>
+  <div class="ctl"><label for="rfal">loss</label><input type="range" id="rfal" min="0" max="20" step="0.5" value="3"><output id="rfoal">3.0 dB/cm</output></div>
+  <div class="ctl"><label for="rfsp">span</label><input type="range" id="rfsp" min="50" max="1200" step="10" value="300"><output id="rfosp">300 GHz</output></div>
+  <div class="ctl"><label for="rfrr">radius</label><input type="number" id="rfrr" value="10" min="1" max="200" step="0.5"><span class="unit">&#181;m</span></div>
+  <div class="ctl"><label for="rfng">n<sub>g</sub></label><input type="number" id="rfng" value="4.4" min="1.5" max="6" step="0.05"></div>
+  <div class="ctl"><label for="rflm">&#955;&#8320;</label><input type="number" id="rflm" value="1310" min="400" max="2500" step="1"><span class="unit">nm</span></div>
+  <div class="ctl"><button id="rfbw" type="button">set &#954;&#8322; maximally flat</button></div>
+</div>
+
+<dl class="stats">
+  <div class="stat"><dt>FSR</dt><dd id="rfFSR">&#8212;</dd></div>
+  <div class="stat"><dt>3-dB BW</dt><dd id="rfBW">&#8212;</dd></div>
+  <div class="stat"><dt>peak drop</dt><dd id="rfPK">&#8212;</dd></div>
+  <div class="stat"><dt>thru null</dt><dd id="rfEX">&#8212;</dd></div>
+  <div class="stat"><dt>split</dt><dd id="rfSP">&#8212;</dd></div>
+</dl>
+
+<p class="note" style="margin-top:2rem">Lossless point couplers and a round-trip
+phase linearized about &#955;&#8320; with the group index. Round-trip field
+transmission is <code>a = 10^(&#8722;&#945;L/20)</code> with L = 2&#960;R. The
+maximally flat condition is <code>&#954;&#8322; = &#954;&#8321;&#178;/(1+t&#8321;&#178;)</code>;
+the resonance splitting is <code>FSR&#183;asin(&#954;&#8322;)/&#960;</code>, set by the
+inter-ring gap alone. Coupler dispersion is not modelled, so a filter that is
+maximally flat at &#955;&#8320; will not be a few tens of nm away.</p>
+
+</div>
+
+<script>
+(function(){
+  var C0=2.99792458e8;
+  var cv=document.getElementById('rfcv'), ctx=cv.getContext('2d');
+  var N=1201, hoverX=null;
+  var ids=['rfk1','rfk2','rfal','rfsp','rfrr','rfng','rflm'], el={};
+  ids.forEach(function(i){el[i]=document.getElementById(i);});
+  function P(){
+    var k1=+el.rfk1.value, k2=+el.rfk2.value, al=+el.rfal.value;
+    var R=+el.rfrr.value*1e-6, ng=+el.rfng.value, lam=+el.rflm.value*1e-9;
+    var L=2*Math.PI*R;
+    return {k1:k1,k2:k2,t1:Math.sqrt(1-k1*k1),t2:Math.sqrt(1-k2*k2),
+            a:Math.pow(10,-al*L*100/20),
+            radPerNm:2*Math.PI*ng*L*1e-9/(lam*lam),
+            fsrNm:lam*lam/(ng*L)*1e9,
+            g:C0/(lam*lam)*1e-9/1e9,
+            spanG:+el.rfsp.value/2};
+  }
+  function trace(p){
+    var spanNm=p.spanG/p.g, d=[], t=[], i;
+    var K=p.k1*p.k1*p.k2*p.a, c1=p.t2*(1+p.t1*p.t1);
+    for(i=0;i<N;i++){
+      var f=-spanNm+2*spanNm*i/(N-1), q=f*p.radPerNm;
+      var xr=p.a*Math.cos(q), xi=-p.a*Math.sin(q);
+      var sr=xr*xr-xi*xi, si=2*xr*xi;
+      var Dr=1-2*p.t1*p.t2*xr+p.t1*p.t1*sr;
+      var Di=-2*p.t1*p.t2*xi+p.t1*p.t1*si;
+      var den=Dr*Dr+Di*Di;
+      var Nr=p.t1-c1*xr+p.t1*sr, Ni=-c1*xi+p.t1*si;
+      d.push(10*Math.log10(K*K/den));
+      t.push(10*Math.log10((Nr*Nr+Ni*Ni)/den));
+    }
+    return {d:d,t:t,spanG:p.spanG};
+  }
+  function fmt(v,n){return (Math.round(v*Math.pow(10,n))/Math.pow(10,n)).toFixed(n);}
+  var ML=52, MR=10, MT=8, MB=34, YMIN=-45, YMAX=3;
+  var INK='#333', MUT='#888', GRID='#eee', RULE='#ddd', DROP='#4582ec', THRU='#d9534f';
+  function draw(){
+    var p=P(), r=trace(p);
+    var dpr=window.devicePixelRatio||1;
+    var w=cv.clientWidth, h=cv.clientHeight;
+    cv.width=w*dpr; cv.height=h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    var pw=w-ML-MR, ph=h-MT-MB;
+    var X=function(f){return ML+(f+r.spanG)/(2*r.spanG)*pw;};
+    var Y=function(v){return MT+(YMAX-v)/(YMAX-YMIN)*ph;};
+    ctx.font='11px Menlo,Consolas,monospace';
+    ctx.strokeStyle=GRID; ctx.lineWidth=1;
+    for(var v=0;v>=-40;v-=10){
+      var y=Math.round(Y(v))+0.5;
+      ctx.beginPath(); ctx.moveTo(ML,y); ctx.lineTo(ML+pw,y); ctx.stroke();
+      ctx.fillStyle=MUT; ctx.textAlign='right'; ctx.textBaseline='middle';
+      ctx.fillText(v+'', ML-9, y);
+    }
+    var step=r.spanG/3;
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    for(var k=-3;k<=3;k++){
+      var f=k*step, x=Math.round(X(f))+0.5;
+      if(k!==0){ctx.strokeStyle=GRID;ctx.beginPath();ctx.moveTo(x,MT);ctx.lineTo(x,MT+ph);ctx.stroke();}
+      ctx.fillStyle=MUT; ctx.fillText(fmt(f,0), x, MT+ph+8);
+    }
+    ctx.strokeStyle=RULE; ctx.beginPath();
+    ctx.moveTo(ML,MT+ph+0.5); ctx.lineTo(ML+pw,MT+ph+0.5);
+    ctx.moveTo(ML+0.5,MT); ctx.lineTo(ML+0.5,MT+ph); ctx.stroke();
+    ctx.fillStyle=MUT; ctx.textAlign='center';
+    ctx.fillText('detuning from '+el.rflm.value+' nm  (GHz)', ML+pw/2, MT+ph+20);
+    ctx.save(); ctx.translate(13,MT+ph/2); ctx.rotate(-Math.PI/2);
+    ctx.textBaseline='middle'; ctx.fillText('transmission (dB)',0,0); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(ML,MT,pw,ph); ctx.clip();
+    function line(arr,color,dash){
+      ctx.beginPath(); ctx.setLineDash(dash); ctx.strokeStyle=color;
+      ctx.lineWidth=1.8; ctx.lineJoin='round';
+      for(var i=0;i<N;i++){
+        var f=-r.spanG+2*r.spanG*i/(N-1);
+        var y=Y(Math.max(arr[i],YMIN-6));
+        if(i===0) ctx.moveTo(X(f),y); else ctx.lineTo(X(f),y);
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    line(r.t,THRU,[5,4]);
+    line(r.d,DROP,[]);
+    if(hoverX!==null){
+      var idx=Math.round((hoverX-ML)/pw*(N-1));
+      if(idx>=0&&idx<N){
+        var fx=-r.spanG+2*r.spanG*idx/(N-1), px=X(fx);
+        ctx.strokeStyle=MUT; ctx.setLineDash([2,3]);
+        ctx.beginPath(); ctx.moveTo(px,MT); ctx.lineTo(px,MT+ph); ctx.stroke();
+        ctx.setLineDash([]);
+        document.getElementById('rfro').textContent=
+          fmt(fx,1)+' GHz   drop '+fmt(r.d[idx],2)+' dB   thru '+fmt(r.t[idx],2)+' dB';
+      }
+    }
+    ctx.restore();
+    var pk=-1e9,i,lo=0,hi=N-1,mn=1e9;
+    for(i=0;i<N;i++){if(r.d[i]>pk)pk=r.d[i]; if(r.t[i]<mn)mn=r.t[i];}
+    while(lo<N&&r.d[lo]<pk-3)lo++;
+    while(hi>0&&r.d[hi]<pk-3)hi--;
+    var bw=hi>lo?(hi-lo)/(N-1)*2*r.spanG:0;
+    document.getElementById('rfFSR').textContent=fmt(p.fsrNm*p.g,0)+' GHz';
+    document.getElementById('rfBW').textContent=fmt(bw,1)+' GHz';
+    document.getElementById('rfPK').textContent=fmt(pk,2)+' dB';
+    document.getElementById('rfEX').textContent=fmt(mn,1)+' dB';
+    document.getElementById('rfSP').textContent=fmt(p.fsrNm*Math.asin(p.k2)/Math.PI*p.g,1)+' GHz';
+  }
+  function update(){
+    document.getElementById('rfok1').textContent=(+el.rfk1.value).toFixed(2);
+    document.getElementById('rfok2').textContent=(+el.rfk2.value).toFixed(3);
+    document.getElementById('rfoal').textContent=(+el.rfal.value).toFixed(1)+' dB/cm';
+    document.getElementById('rfosp').textContent=el.rfsp.value+' GHz';
+    draw();
+  }
+  ids.forEach(function(i){el[i].addEventListener('input',update);});
+  document.getElementById('rfbw').addEventListener('click',function(){
+    var k1=+el.rfk1.value, t1=Math.sqrt(1-k1*k1);
+    el.rfk2.value=(k1*k1/(1+t1*t1)).toFixed(3); update();
+  });
+  cv.addEventListener('pointermove',function(e){
+    var b=cv.getBoundingClientRect(); hoverX=e.clientX-b.left; draw();
+  });
+  cv.addEventListener('pointerleave',function(){
+    hoverX=null;
+    document.getElementById('rfro').textContent='hover the plot to read values';
+    draw();
+  });
+  window.addEventListener('resize',draw);
+  update();
+})();
+</script>
