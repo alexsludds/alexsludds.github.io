@@ -1,0 +1,201 @@
+---
+layout: singlePage
+title: Vernier two-ring filter | Alex Sludds
+permalink: /widgets/vernier-filter/
+---
+
+{% include widget-style.html %}
+
+<div class="wgt">
+
+<h2>Vernier two-ring filter</h2>
+
+<p class="lede">Two series-coupled rings of unequal radius. Only the resonances
+that happen to line up survive; everything else is suppressed by the ring that
+does not resonate there. The composite free spectral range is far larger than
+either ring's, at the cost of side modes that never fully disappear.</p>
+
+<div class="eq">
+&#124;H<sub>d</sub>&#124;&#178; = &nbsp;(&#954;&#8321;&#178;&#954;&#8322;)&#178;&#183;a&#8321;a&#8322; &nbsp;<span>/</span>&nbsp; &#124;D&#124;&#178; &nbsp;&nbsp;&nbsp; D = 1 &#8722; t&#8321;t&#8322;(x&#8321;+x&#8322;) + t&#8321;&#178;x&#8321;x&#8322;<br>
+<span>x<sub>i</sub> = a<sub>i</sub>&#183;e<sup>&#8722;j&#966;i</sup> &nbsp;&nbsp; &#966;<sub>i</sub> = 2&#960;n<sub>i</sub>(&#955;)L<sub>i</sub>/&#955; &nbsp;&nbsp; FSR<sub>V</sub> = FSR&#8321;&#183;FSR&#8322; / &#124;FSR&#8321;&#8722;FSR&#8322;&#124;</span>
+</div>
+
+<div class="plot">
+  <div class="key">
+    <span><i style="border-top-style:solid;border-top-color:#4582ec"></i>drop &#124;H<sub>d</sub>&#124;&#178;</span>
+    <span><i style="border-top-style:dashed;border-top-color:#d9534f"></i>thru &#124;H<sub>t</sub>&#124;&#178;</span>
+  </div>
+  <canvas id="vcv" role="img" aria-label="Drop and through port transmission versus wavelength over several free spectral ranges">A tall aligned resonance at the design wavelength with suppressed side modes on either side.</canvas>
+  <div class="readout" id="vro">hover the plot to read values</div>
+</div>
+
+<div class="panel">
+  <div class="ctl"><label for="vr1">R&#8321;</label><input type="number" id="vr1" value="10" min="1" max="200" step="0.1"><span class="unit">&#181;m</span></div>
+  <div class="ctl"><label for="vr2">R&#8322;</label><input type="number" id="vr2" value="11" min="1" max="200" step="0.1"><span class="unit">&#181;m</span></div>
+  <div class="ctl"><label for="vk1">&#954;&#8321; = &#954;&#8323;</label><input type="range" id="vk1" min="0.05" max="0.70" step="0.01" value="0.35"><output id="vok1">0.35</output></div>
+  <div class="ctl"><label for="vk2">&#954;&#8322;</label><input type="range" id="vk2" min="0.005" max="0.35" step="0.005" value="0.065"><output id="vok2">0.065</output></div>
+  <div class="ctl"><label for="val">loss</label><input type="range" id="val" min="0" max="20" step="0.5" value="3"><output id="voal">3.0 dB/cm</output></div>
+  <div class="ctl"><label for="vsp">span</label><input type="range" id="vsp" min="4" max="80" step="1" value="30"><output id="vosp">30 nm</output></div>
+  <div class="ctl"><label for="vne">n<sub>eff</sub></label><input type="number" id="vne" value="2.50" min="1.2" max="4" step="0.01"></div>
+  <div class="ctl"><label for="vng">n<sub>g</sub></label><input type="number" id="vng" value="4.4" min="1.5" max="6" step="0.05"></div>
+  <div class="ctl"><label for="vlm">&#955;&#8320;</label><input type="number" id="vlm" value="1310" min="400" max="2500" step="1"><span class="unit">nm</span></div>
+  <div class="ctl"><button id="vbw" type="button">set &#954;&#8322; maximally flat</button></div>
+</div>
+
+<dl class="stats">
+  <div class="stat"><dt>FSR&#8321;</dt><dd id="vF1">&#8212;</dd></div>
+  <div class="stat"><dt>FSR&#8322;</dt><dd id="vF2">&#8212;</dd></div>
+  <div class="stat"><dt>Vernier FSR</dt><dd id="vFV">&#8212;</dd></div>
+  <div class="stat"><dt>side mode</dt><dd id="vSM">&#8212;</dd></div>
+  <div class="stat"><dt>3-dB BW</dt><dd id="vBW">&#8212;</dd></div>
+</dl>
+
+<p class="note">Both rings are assumed tuned into alignment at &#955;&#8320;: the
+mode order of each is rounded to the nearest integer and its index adjusted to
+put a resonance exactly there, which is what a thermal tuner does for you in
+practice. Dispersion is first order, from <code>dn/d&#955; = (n<sub>eff</sub> &#8722; n<sub>g</sub>)/&#955;&#8320;</code>.
+Side mode suppression is measured inside the plotted span, so widen the span
+until you can see the next Vernier order before trusting it. Making the radii
+closer together buys a larger composite FSR and immediately costs you side mode
+suppression &#8212; that trade is the whole design problem.</p>
+
+</div>
+
+<script>
+(function(){
+  var C0=2.99792458e8;
+  var cv=document.getElementById('vcv'), ctx=cv.getContext('2d');
+  var N=3001, hov=null;
+  var ids=['vr1','vr2','vk1','vk2','val','vsp','vne','vng','vlm'], el={};
+  ids.forEach(function(i){el[i]=document.getElementById(i);});
+  function fmt(v,n){return (Math.round(v*Math.pow(10,n))/Math.pow(10,n)).toFixed(n);}
+  function P(){
+    var lam0=+el.vlm.value*1e-9, ng=+el.vng.value, n0=+el.vne.value;
+    var L1=2*Math.PI*(+el.vr1.value)*1e-6, L2=2*Math.PI*(+el.vr2.value)*1e-6;
+    var m1=Math.round(n0*L1/lam0), m2=Math.round(n0*L2/lam0);
+    var n1=m1*lam0/L1, n2=m2*lam0/L2, al=+el.val.value;
+    var k1=+el.vk1.value, k2=+el.vk2.value;
+    return {L1:L1,L2:L2,n1:n1,n2:n2,ng:ng,lam0:lam0,
+      dn1:(n1-ng)/lam0, dn2:(n2-ng)/lam0,
+      a1:Math.pow(10,-al*L1*100/20), a2:Math.pow(10,-al*L2*100/20),
+      k1:k1,k2:k2,t1:Math.sqrt(1-k1*k1),t2:Math.sqrt(1-k2*k2),
+      f1:lam0*lam0/(ng*L1)*1e9, f2:lam0*lam0/(ng*L2)*1e9,
+      span:+el.vsp.value};
+  }
+  function curves(p){
+    var d=[], t=[], i;
+    var Kd=p.k1*p.k1*p.k2, num=Kd*Kd*p.a1*p.a2;
+    for(i=0;i<N;i++){
+      var dl=(-p.span/2+p.span*i/(N-1))*1e-9, lam=p.lam0+dl;
+      var ph1=2*Math.PI*(p.n1+p.dn1*dl)*p.L1/lam;
+      var ph2=2*Math.PI*(p.n2+p.dn2*dl)*p.L2/lam;
+      var x1r=p.a1*Math.cos(ph1), x1i=-p.a1*Math.sin(ph1);
+      var x2r=p.a2*Math.cos(ph2), x2i=-p.a2*Math.sin(ph2);
+      var pr=x1r*x2r-x1i*x2i, pi=x1r*x2i+x1i*x2r;
+      var c=p.t1*p.t2, tt=p.t1*p.t1;
+      var Dr=1-c*(x1r+x2r)+tt*pr, Di=-c*(x1i+x2i)+tt*pi;
+      var den=Dr*Dr+Di*Di;
+      var Nr=p.t1*(1+pr)-p.t2*(x1r+tt*x2r);
+      var Ni=p.t1*pi-p.t2*(x1i+tt*x2i);
+      d.push(10*Math.log10(num/den));
+      t.push(10*Math.log10((Nr*Nr+Ni*Ni)/den));
+    }
+    return {d:d,t:t};
+  }
+  var ML=52, MR=10, MT=8, MB=34, YMIN=-45, YMAX=3;
+  function draw(){
+    var p=P(), r=curves(p), i;
+    var dpr=window.devicePixelRatio||1, w=cv.clientWidth, h=cv.clientHeight;
+    cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    var pw=w-ML-MR, ph=h-MT-MB, half=p.span/2;
+    var X=function(v){return ML+(v+half)/(2*half)*pw;};
+    var Y=function(v){return MT+(YMAX-v)/(YMAX-YMIN)*ph;};
+    ctx.font='11px Menlo,Consolas,monospace';
+    for(var v=0;v>=-40;v-=10){
+      var y=Math.round(Y(v))+0.5;
+      ctx.strokeStyle='#eee'; ctx.beginPath();
+      ctx.moveTo(ML,y); ctx.lineTo(ML+pw,y); ctx.stroke();
+      ctx.fillStyle='#888'; ctx.textAlign='right'; ctx.textBaseline='middle';
+      ctx.fillText(v+'', ML-9, y);
+    }
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    for(var k=-3;k<=3;k++){
+      var xv=k*half/3, x=Math.round(X(xv))+0.5;
+      if(k!==0){ctx.strokeStyle='#eee';ctx.beginPath();ctx.moveTo(x,MT);ctx.lineTo(x,MT+ph);ctx.stroke();}
+      ctx.fillStyle='#888'; ctx.fillText(fmt(xv,1), x, MT+ph+8);
+    }
+    ctx.strokeStyle='#ddd'; ctx.beginPath();
+    ctx.moveTo(ML,MT+ph+0.5); ctx.lineTo(ML+pw,MT+ph+0.5);
+    ctx.moveTo(ML+0.5,MT); ctx.lineTo(ML+0.5,MT+ph); ctx.stroke();
+    ctx.fillStyle='#888'; ctx.textAlign='center';
+    ctx.fillText('detuning from '+el.vlm.value+' nm  (nm)', ML+pw/2, MT+ph+20);
+    ctx.save(); ctx.translate(13,MT+ph/2); ctx.rotate(-Math.PI/2);
+    ctx.textBaseline='middle'; ctx.fillText('transmission (dB)',0,0); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(ML,MT,pw,ph); ctx.clip();
+    function line(arr,color,dash){
+      ctx.beginPath(); ctx.setLineDash(dash); ctx.strokeStyle=color; ctx.lineWidth=1.6;
+      for(var i=0;i<N;i++){
+        var xv=-half+2*half*i/(N-1);
+        var y=Y(Math.max(arr[i],YMIN-8));
+        if(i===0) ctx.moveTo(X(xv),y); else ctx.lineTo(X(xv),y);
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    line(r.t,'#d9534f',[4,4]);
+    line(r.d,'#4582ec',[]);
+    if(hov!==null){
+      var idx=Math.round((hov-ML)/pw*(N-1));
+      if(idx>=0&&idx<N){
+        var xv2=-half+2*half*idx/(N-1);
+        ctx.strokeStyle='#888'; ctx.setLineDash([2,3]);
+        ctx.beginPath(); ctx.moveTo(X(xv2),MT); ctx.lineTo(X(xv2),MT+ph); ctx.stroke();
+        ctx.setLineDash([]);
+        document.getElementById('vro').textContent=
+          fmt(xv2,3)+' nm   drop '+fmt(r.d[idx],2)+' dB   thru '+fmt(r.t[idx],2)+' dB';
+      }
+    }
+    ctx.restore();
+    var pk=-1e9, pidx=0;
+    for(i=0;i<N;i++) if(r.d[i]>pk){pk=r.d[i]; pidx=i;}
+    var lo=pidx, hi=pidx;
+    while(lo>0 && r.d[lo-1]<r.d[lo]) lo--;
+    while(hi<N-1 && r.d[hi+1]<r.d[hi]) hi++;
+    var side=-1e9;
+    for(i=0;i<N;i++) if((i<lo||i>hi) && r.d[i]>side) side=r.d[i];
+    var b1=pidx, b2=pidx;
+    while(b1>0 && r.d[b1]>pk-3) b1--;
+    while(b2<N-1 && r.d[b2]>pk-3) b2++;
+    var bwNm=(b2-b1)/(N-1)*p.span;
+    var ghz=C0/(p.lam0*p.lam0)*1e-9/1e9;
+    var dF=Math.abs(p.f1-p.f2);
+    document.getElementById('vF1').textContent=fmt(p.f1,2)+' nm';
+    document.getElementById('vF2').textContent=fmt(p.f2,2)+' nm';
+    document.getElementById('vFV').textContent=dF>1e-6?fmt(p.f1*p.f2/dF,1)+' nm':'\u221e';
+    document.getElementById('vSM').textContent=side>-1e8?fmt(pk-side,1)+' dB':'\u2014';
+    document.getElementById('vBW').textContent=fmt(bwNm*ghz,1)+' GHz';
+  }
+  function update(){
+    document.getElementById('vok1').textContent=(+el.vk1.value).toFixed(2);
+    document.getElementById('vok2').textContent=(+el.vk2.value).toFixed(3);
+    document.getElementById('voal').textContent=(+el.val.value).toFixed(1)+' dB/cm';
+    document.getElementById('vosp').textContent=el.vsp.value+' nm';
+    draw();
+  }
+  ids.forEach(function(i){el[i].addEventListener('input',update);});
+  document.getElementById('vbw').addEventListener('click',function(){
+    var k1=+el.vk1.value, t1=Math.sqrt(1-k1*k1);
+    el.vk2.value=(k1*k1/(1+t1*t1)).toFixed(3); update();
+  });
+  cv.addEventListener('pointermove',function(e){
+    hov=e.clientX-cv.getBoundingClientRect().left; draw();
+  });
+  cv.addEventListener('pointerleave',function(){
+    hov=null;
+    document.getElementById('vro').textContent='hover the plot to read values';
+    draw();
+  });
+  window.addEventListener('resize',draw);
+  update();
+})();
+</script>

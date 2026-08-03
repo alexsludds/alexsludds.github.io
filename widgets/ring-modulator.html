@@ -1,0 +1,221 @@
+---
+layout: singlePage
+title: Ring modulator OMA and ER | Alex Sludds
+permalink: /widgets/ring-modulator/
+---
+
+{% include widget-style.html %}
+
+<div class="wgt">
+
+<h2>Ring modulator: OMA and ER</h2>
+
+<p class="lede">An all-pass ring on a bus, driven by shifting its resonance. The
+laser sits at a fixed wavelength; the two drive levels put the notch in two
+different places, and the difference in transmitted power is your signal. The
+best bias is not the one that maximises extinction ratio.</p>
+
+<div class="eq">
+T(&#966;) = &nbsp;(a&#178; &#8722; 2at&#183;cos&#966; + t&#178;) &nbsp;<span>/</span>&nbsp; (1 &#8722; 2at&#183;cos&#966; + a&#178;t&#178;)<br>
+<span>OMA = T<sub>hi</sub> &#8722; T<sub>lo</sub> &nbsp;&nbsp; ER = 10&#183;log(T<sub>hi</sub>/T<sub>lo</sub>) &nbsp;&nbsp; IL = &#8722;10&#183;log(T<sub>hi</sub>)</span>
+</div>
+
+<div class="plot">
+  <div class="key">
+    <span><i style="border-top-style:solid;border-top-color:#4582ec"></i>notch, bit 0</span>
+    <span><i style="border-top-style:solid;border-top-color:#d9534f"></i>notch, bit 1</span>
+    <span><i style="border-top-style:dashed;border-top-color:#888"></i>laser</span>
+  </div>
+  <canvas id="mA" role="img" aria-label="Through-port transmission for the two drive levels versus laser detuning">Two shifted resonance notches with the laser wavelength marked between them.</canvas>
+  <div class="readout" id="mro">hover to read the two operating points</div>
+</div>
+
+<div class="plot">
+  <div class="key">
+    <span><i style="border-top-style:solid;border-top-color:#4582ec"></i>OMA (dB rel. P<sub>in</sub>)</span>
+    <span><i style="border-top-style:solid;border-top-color:#d9534f"></i>ER</span>
+    <span><i style="border-top-style:dashed;border-top-color:#888"></i>current bias</span>
+  </div>
+  <canvas id="mB" class="short" role="img" aria-label="Optical modulation amplitude and extinction ratio versus bias detuning">OMA peaks well away from the detuning that maximises extinction ratio.</canvas>
+</div>
+
+<div class="panel">
+  <div class="ctl"><label for="mk">&#954;</label><input type="range" id="mk" min="0.05" max="0.60" step="0.005" value="0.20"><output id="mok">0.200</output></div>
+  <div class="ctl"><label for="mal">loss</label><input type="range" id="mal" min="0" max="25" step="0.5" value="5"><output id="moal">5.0 dB/cm</output></div>
+  <div class="ctl"><label for="msh">drive shift</label><input type="range" id="msh" min="0" max="300" step="5" value="60"><output id="mosh">60 pm</output></div>
+  <div class="ctl"><label for="mdt">bias</label><input type="range" id="mdt" min="-400" max="400" step="2" value="-40"><output id="modt">-40 pm</output></div>
+  <div class="ctl"><label for="msp">span</label><input type="range" id="msp" min="100" max="1200" step="20" value="400"><output id="mosp">400 pm</output></div>
+  <div class="ctl"><label for="mrr">radius</label><input type="number" id="mrr" value="7.5" min="1" max="100" step="0.5"><span class="unit">&#181;m</span></div>
+  <div class="ctl"><label for="mng">n<sub>g</sub></label><input type="number" id="mng" value="4.4" min="1.5" max="6" step="0.05"></div>
+  <div class="ctl"><label for="mlm">&#955;&#8320;</label><input type="number" id="mlm" value="1310" min="400" max="2500" step="1"><span class="unit">nm</span></div>
+  <div class="ctl"><button id="mopt" type="button">bias for max OMA</button></div>
+</div>
+
+<dl class="stats">
+  <div class="stat"><dt>OMA</dt><dd id="mOMA">&#8212;</dd></div>
+  <div class="stat"><dt>ER</dt><dd id="mER">&#8212;</dd></div>
+  <div class="stat"><dt>IL</dt><dd id="mIL">&#8212;</dd></div>
+  <div class="stat"><dt>loaded Q</dt><dd id="mQ">&#8212;</dd></div>
+  <div class="stat"><dt>FWHM</dt><dd id="mFW">&#8212;</dd></div>
+</dl>
+
+<p class="note">A pure electro-refractive shift is assumed: the resonance moves
+but its depth and width do not change. Real depletion modulators also add free
+carrier absorption, which shallows the notch on the "on" level and costs you a
+little OMA on top of what is shown here. Drive shift is the full swing between
+the two levels, so a device with 25 pm/V under 2 V<sub>pp</sub> is 50 pm. The
+"bias for max OMA" button scans the whole span, which is worth doing after every
+change to &#954; or loss, since the optimum moves.</p>
+
+</div>
+
+<script>
+(function(){
+  var C0=2.99792458e8;
+  var cA=document.getElementById('mA'), xA=cA.getContext('2d');
+  var cB=document.getElementById('mB'), xB=cB.getContext('2d');
+  var N=1001, hov=null;
+  var ids=['mk','mal','msh','mdt','msp','mrr','mng','mlm'], el={};
+  ids.forEach(function(i){el[i]=document.getElementById(i);});
+  function fmt(v,n){return (Math.round(v*Math.pow(10,n))/Math.pow(10,n)).toFixed(n);}
+  function P(){
+    var k=+el.mk.value, R=+el.mrr.value*1e-6, ng=+el.mng.value, lam=+el.mlm.value*1e-9;
+    var L=2*Math.PI*R;
+    return {t:Math.sqrt(1-k*k), a:Math.pow(10,-(+el.mal.value)*L*100/20),
+            radPerPm:2*Math.PI*ng*L*1e-12/(lam*lam),
+            g:C0/(lam*lam)*1e-12/1e9,
+            fsrNm:lam*lam/(ng*L)*1e9, lam0:+el.mlm.value,
+            sh:+el.msh.value, dt:+el.mdt.value, sp:+el.msp.value};
+  }
+  function T(p,dpm){
+    var f=Math.cos(dpm*p.radPerPm), a=p.a, t=p.t;
+    return (a*a-2*a*t*f+t*t)/(1-2*a*t*f+a*a*t*t);
+  }
+  function metrics(p,bias){
+    var A=T(p,bias), B=T(p,bias-p.sh);
+    var hi=Math.max(A,B), lo=Math.min(A,B);
+    return {hi:hi, lo:lo, oma:hi-lo,
+            omaDB:10*Math.log10(Math.max(hi-lo,1e-12)),
+            er:10*Math.log10(hi/Math.max(lo,1e-12)),
+            il:-10*Math.log10(Math.max(hi,1e-12))};
+  }
+  function fwhm(p){
+    var lo=0, i, step=0.25, mx=T(p,1e6);
+    var mn=T(p,0), half=(mx+mn)/2;
+    for(i=0;i<20000;i++){ if(T(p,i*step)>=half){lo=i*step;break;} }
+    return 2*lo;
+  }
+  function axes(ctx,c,ymin,ymax,ystep,span,xlabel,ylabel){
+    var dpr=window.devicePixelRatio||1, w=c.clientWidth, h=c.clientHeight;
+    c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    var ML=52, MR=10, MT=8, MB=32, pw=w-ML-MR, ph=h-MT-MB;
+    var X=function(v){return ML+(v+span)/(2*span)*pw;};
+    var Y=function(v){return MT+(ymax-v)/(ymax-ymin)*ph;};
+    ctx.font='11px Menlo,Consolas,monospace';
+    for(var v=ymax-((ymax%ystep)+ystep)%ystep;v>=ymin;v-=ystep){
+      var y=Math.round(Y(v))+0.5;
+      ctx.strokeStyle='#eee'; ctx.beginPath();
+      ctx.moveTo(ML,y); ctx.lineTo(ML+pw,y); ctx.stroke();
+      ctx.fillStyle='#888'; ctx.textAlign='right'; ctx.textBaseline='middle';
+      ctx.fillText(v+'', ML-9, y);
+    }
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    for(var k=-3;k<=3;k++){
+      var xv=k*span/3, x=Math.round(X(xv))+0.5;
+      if(k!==0){ctx.strokeStyle='#eee';ctx.beginPath();ctx.moveTo(x,MT);ctx.lineTo(x,MT+ph);ctx.stroke();}
+      ctx.fillStyle='#888'; ctx.fillText(fmt(xv,0), x, MT+ph+7);
+    }
+    ctx.strokeStyle='#ddd'; ctx.beginPath();
+    ctx.moveTo(ML,MT+ph+0.5); ctx.lineTo(ML+pw,MT+ph+0.5);
+    ctx.moveTo(ML+0.5,MT); ctx.lineTo(ML+0.5,MT+ph); ctx.stroke();
+    ctx.fillStyle='#888'; ctx.textAlign='center';
+    ctx.fillText(xlabel, ML+pw/2, MT+ph+19);
+    ctx.save(); ctx.translate(13,MT+ph/2); ctx.rotate(-Math.PI/2);
+    ctx.textBaseline='middle'; ctx.fillText(ylabel,0,0); ctx.restore();
+    return {X:X,Y:Y,ML:ML,MT:MT,pw:pw,ph:ph};
+  }
+  function poly(ctx,g,pts,color,dash,ymin){
+    ctx.save(); ctx.beginPath(); ctx.rect(g.ML,g.MT,g.pw,g.ph); ctx.clip();
+    ctx.beginPath(); ctx.setLineDash(dash); ctx.strokeStyle=color; ctx.lineWidth=1.8;
+    for(var i=0;i<pts.length;i++){
+      var y=g.Y(Math.max(pts[i][1],ymin-8));
+      if(i===0) ctx.moveTo(g.X(pts[i][0]),y); else ctx.lineTo(g.X(pts[i][0]),y);
+    }
+    ctx.stroke(); ctx.setLineDash([]); ctx.restore();
+  }
+  function draw(){
+    var p=P(), i, d, A=[], B=[], O=[], E=[];
+    for(i=0;i<N;i++){
+      d=-p.sp+2*p.sp*i/(N-1);
+      A.push([d,10*Math.log10(T(p,d))]);
+      B.push([d,10*Math.log10(T(p,d-p.sh))]);
+      var m=metrics(p,d);
+      O.push([d,m.omaDB]); E.push([d,m.er]);
+    }
+    var g=axes(xA,cA,-30,2,10,p.sp,'laser detuning from cold resonance (pm)','transmission (dB)');
+    poly(xA,g,A,'#4582ec',[],-30);
+    poly(xA,g,B,'#d9534f',[],-30);
+    xA.save(); xA.beginPath(); xA.rect(g.ML,g.MT,g.pw,g.ph); xA.clip();
+    var bx=g.X(p.dt);
+    xA.strokeStyle='#888'; xA.setLineDash([3,3]);
+    xA.beginPath(); xA.moveTo(bx,g.MT); xA.lineTo(bx,g.MT+g.ph); xA.stroke();
+    xA.setLineDash([]);
+    var mm=metrics(p,p.dt);
+    [[T(p,p.dt),'#4582ec'],[T(p,p.dt-p.sh),'#d9534f']].forEach(function(o){
+      xA.fillStyle=o[1]; xA.beginPath();
+      xA.arc(bx,g.Y(Math.max(10*Math.log10(o[0]),-30)),4,0,6.2832); xA.fill();
+    });
+    xA.restore();
+    var g2=axes(xB,cB,-40,40,20,p.sp,'bias detuning (pm)','dB');
+    poly(xB,g2,O,'#4582ec',[],-40);
+    poly(xB,g2,E,'#d9534f',[],-40);
+    xB.save(); xB.beginPath(); xB.rect(g2.ML,g2.MT,g2.pw,g2.ph); xB.clip();
+    xB.strokeStyle='#888'; xB.setLineDash([3,3]);
+    xB.beginPath(); xB.moveTo(g2.X(p.dt),g2.MT); xB.lineTo(g2.X(p.dt),g2.MT+g2.ph); xB.stroke();
+    xB.setLineDash([]); xB.restore();
+    if(hov!==null){
+      var dd=-p.sp+2*p.sp*(hov-g.ML)/g.pw;
+      if(dd>=-p.sp&&dd<=p.sp){
+        var h=metrics(p,dd);
+        document.getElementById('mro').textContent=
+          fmt(dd,0)+' pm   OMA '+fmt(h.omaDB,2)+' dB   ER '+fmt(h.er,2)+' dB   IL '+fmt(h.il,2)+' dB';
+      }
+    }
+    var fw=fwhm(p);
+    document.getElementById('mOMA').textContent=fmt(mm.omaDB,2)+' dB';
+    document.getElementById('mER').textContent=fmt(mm.er,2)+' dB';
+    document.getElementById('mIL').textContent=fmt(mm.il,2)+' dB';
+    document.getElementById('mQ').textContent=fw>0?fmt(p.lam0*1000/fw,0):'\u2014';
+    document.getElementById('mFW').textContent=fmt(fw*p.g,1)+' GHz';
+  }
+  function update(){
+    document.getElementById('mok').textContent=(+el.mk.value).toFixed(3);
+    document.getElementById('moal').textContent=(+el.mal.value).toFixed(1)+' dB/cm';
+    document.getElementById('mosh').textContent=el.msh.value+' pm';
+    document.getElementById('modt').textContent=el.mdt.value+' pm';
+    document.getElementById('mosp').textContent=el.msp.value+' pm';
+    draw();
+  }
+  ids.forEach(function(i){el[i].addEventListener('input',update);});
+  document.getElementById('mopt').addEventListener('click',function(){
+    var p=P(), best=-1e9, at=0, i, d;
+    for(i=0;i<2001;i++){
+      d=-p.sp+2*p.sp*i/2000;
+      var o=metrics(p,d).oma;
+      if(o>best){best=o; at=d;}
+    }
+    el.mdt.value=Math.round(at/2)*2; update();
+  });
+  cA.addEventListener('pointermove',function(e){
+    hov=e.clientX-cA.getBoundingClientRect().left; draw();
+  });
+  cA.addEventListener('pointerleave',function(){
+    hov=null;
+    document.getElementById('mro').textContent='hover to read the two operating points';
+    draw();
+  });
+  window.addEventListener('resize',draw);
+  update();
+})();
+</script>
