@@ -12,7 +12,7 @@ anywhere.
  
 <table class="table table-hover">
   <tr>
-    <td><a href="/widgets/ring-filter/">Two-ring coupled resonator filter</a></td>
+    <td><a href="/widgets/ring_filter/">Two-ring coupled resonator filter</a></td>
     <td>Drop- and through-port spectra for a series-coupled double microring
     add-drop filter, from the exact transfer-matrix solution.</td>
   </tr>
